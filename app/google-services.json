@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830909980020",
+    "project_id": "fotografpaylasma-f412e",
+    "storage_bucket": "fotografpaylasma-f412e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830909980020:android:69abb3882316c41a152021",
+        "android_client_info": {
+          "package_name": "com.example.fotografpaylasmafirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830909980020-c0hi4f8h3cibbrmrr55upk9qj6vche9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHe9K1KJYDEqypxSgizHP_Ce2dnAI7dCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830909980020-c0hi4f8h3cibbrmrr55upk9qj6vche9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

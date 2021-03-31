@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhotoSharingFirebase</string>
+    <string name="sharePhotoText">Share Photo</string>
+    <string name="signOutText">Sign Out</string>
+</resources>
