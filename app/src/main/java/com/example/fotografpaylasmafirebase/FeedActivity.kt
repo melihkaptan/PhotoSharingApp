@@ -52,9 +52,7 @@ class FeedActivity : AppCompatActivity() {
                                     )
                                 )
                             }
-
-                            for (post in postList)
-                                println(post.email)
+                            
                         }
                     }
                 }
