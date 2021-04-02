@@ -1,10 +1,11 @@
-package com.example.fotografpaylasmafirebase
+package com.example.fotografpaylasmafirebase.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.fotografpaylasmafirebase.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,7 +20,7 @@ class UserActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         auth.currentUser?.let {
-            val intent = Intent(this,FeedActivity::class.java)
+            val intent = Intent(this, FeedActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -34,7 +35,7 @@ class UserActivity : AppCompatActivity() {
             if (it.isSuccessful) {
                 val currentUser = auth.currentUser?.email.toString()
                 Toast.makeText(this,"Hoşgeldin: $currentUser",Toast.LENGTH_LONG).show()
-                val intent = Intent(this,FeedActivity::class.java)
+                val intent = Intent(this, FeedActivity::class.java)
                 startActivity(intent)
                 finish()
             }

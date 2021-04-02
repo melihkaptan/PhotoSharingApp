@@ -1,4 +1,4 @@
-package com.example.fotografpaylasmafirebase
+package com.example.fotografpaylasmafirebase.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,15 +6,21 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.example.fotografpaylasmafirebase.data.Post
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fotografpaylasmafirebase.R
+import com.example.fotografpaylasmafirebase.adapter.PostRecyclerAdapter
+import com.example.fotografpaylasmafirebase.model.Post
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import kotlinx.android.synthetic.main.activity_feed.*
 
 class FeedActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseFirestore
+    private lateinit var postRecyclerAdapter: PostRecyclerAdapter
+
     var postList = ArrayList<Post>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +30,11 @@ class FeedActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         database = FirebaseFirestore.getInstance()
         getData()
+
+        val layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = layoutManager
+        postRecyclerAdapter = PostRecyclerAdapter(postList)
+        recyclerView.adapter = postRecyclerAdapter
     }
 
     private fun getData() {
@@ -52,7 +63,7 @@ class FeedActivity : AppCompatActivity() {
                                     )
                                 )
                             }
-                            
+                            postRecyclerAdapter.notifyDataSetChanged()
                         }
                     }
                 }

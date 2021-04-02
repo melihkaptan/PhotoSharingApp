@@ -1,4 +1,4 @@
-package com.example.fotografpaylasmafirebase
+package com.example.fotografpaylasmafirebase.view
 
 import android.Manifest
 import android.app.Activity
@@ -15,14 +15,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.fotografpaylasmafirebase.R
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_sharing_photo.*
 import java.util.*
-import kotlin.collections.HashMap
 
 class SharingPhotoActivity : AppCompatActivity() {
 
@@ -68,8 +67,6 @@ class SharingPhotoActivity : AppCompatActivity() {
 
                     database.collection("Post").add(postHashMap).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "Kaydetme işlemleri başarılı", Toast.LENGTH_LONG)
-                                .show()
                             finish()
                         }
                     }.addOnFailureListener { e ->
